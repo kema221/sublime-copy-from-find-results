@@ -15,7 +15,7 @@ class CopyFromFindResultsCommand(sublime_plugin.TextCommand):
         if clipboard_contents:
             settings = sublime.load_settings('CopyFromFindResults.sublime-settings')
             keep_intermediate_dots = settings.get('keep_intermediate_dots', False)
-            new_clipboard = RegexStruct2(keep_intermediate_dots).sub(clipboard_contents)
+            new_clipboard = RegexStruct(keep_intermediate_dots).sub(clipboard_contents)
             new_clipboard2 = RegexStruct2(keep_intermediate_dots).sub(new_clipboard)
             sublime.set_clipboard(new_clipboard2)
 
